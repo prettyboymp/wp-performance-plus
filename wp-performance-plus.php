@@ -38,7 +38,7 @@ class WP_Performance_Plus {
 			"ALTER TABLE {$wpdb->term_relationships} ADD COLUMN post_type varchar(20) DEFAULT NULL;",
 			"ALTER TABLE {$wpdb->term_relationships} ADD COLUMN post_date datetime DEFAULT '0000-00-00 00:00:00';",
 			"ALTER TABLE {$wpdb->term_relationships} ADD COLUMN post_status varchar(20) DEFAULT NULL;",
-			"ALTER TABLE {$wpdb->term_relationships} ADD KEY date_status (post_date, post_status);",
+			"ALTER TABLE {$wpdb->term_relationships} ADD KEY post_date (post_date);",
 			"UPDATE {$wpdb->term_relationships} wtr, {$wpdb->posts} wpp
 				SET wtr.post_type = wpp.post_type,
 				wtr.post_status = wpp.post_status,
